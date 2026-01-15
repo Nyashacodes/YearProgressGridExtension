@@ -18,6 +18,8 @@ document.getElementById("counter").textContent =
 const grid = document.getElementById("grid");
 grid.innerHTML = "";
 
+const tooltip = document.getElementById("tooltip");
+
 for (let day = 1; day <= totalDays; day++) {
   const date = new Date(year, 0, day);
   const month = date.getMonth();
@@ -25,15 +27,33 @@ for (let day = 1; day <= totalDays; day++) {
   const cell = document.createElement("div");
   cell.className = "day";
 
-  // filled vs empty
   if (day <= passedDays) {
     cell.classList.add("filled", `month-${month}`);
   }
 
-  // month separator (first day of month)
   if (date.getDate() === 1) {
     cell.classList.add("month-start");
   }
 
+  // Tooltip events
+  cell.addEventListener("mouseenter", (e) => {
+    tooltip.textContent = date.toLocaleDateString(undefined, {
+      weekday: "short",
+      month: "short",
+      day: "numeric"
+    });
+    tooltip.style.opacity = "1";
+  });
+
+  cell.addEventListener("mousemove", (e) => {
+    tooltip.style.left = `${e.clientX}px`;
+    tooltip.style.top = `${e.clientY}px`;
+  });
+
+  cell.addEventListener("mouseleave", () => {
+    tooltip.style.opacity = "0";
+  });
+
   grid.appendChild(cell);
 }
+
