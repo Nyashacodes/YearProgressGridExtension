@@ -1,0 +1,55 @@
+body {
+  font-family: system-ui, sans-serif;
+  padding: 10px;
+  width: 220px;
+}
+
+h3 {
+  margin: 0 0 6px 0;
+  font-size: 14px;
+}
+
+#counter {
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+#grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 3px;
+}
+
+.day {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  background: #e5e7eb;
+}
+
+.day.filled {
+  background: #10b981;
+}
+/* Month color classes */
+.month-0 { background: #10b981; }  /* Jan */
+.month-1 { background: #3b82f6; }  /* Feb */
+.month-2 { background: #6366f1; }  /* Mar */
+.month-3 { background: #8b5cf6; }  /* Apr */
+.month-4 { background: #ec4899; }  /* May */
+.month-5 { background: #f59e0b; }  /* Jun */
+.month-6 { background: #f97316; }  /* Jul */
+.month-7 { background: #ef4444; }  /* Aug */
+.month-8 { background: #22c55e; }  /* Sep */
+.month-9 { background: #14b8a6; }  /* Oct */
+.month-10 { background: #0ea5e9; } /* Nov */
+.month-11 { background: #64748b; } /* Dec */
+
+/* Only apply colors to passed days */
+.day:not(.filled) {
+  background: #e5e7eb;
+}
+
+/* Month separator (optional) */
+.day.month-start {
+  outline: 1px solid #00000022;
+}
