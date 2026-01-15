@@ -9,11 +9,25 @@ h3 {
   margin: 0 0 6px 0;
   font-size: 14px;
 }
-
+#info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
 #counter {
   font-size: 12px;
   margin-bottom: 8px;
 }
+#week-counter {
+  font-size: 11px;
+  margin-bottom: 6px;
+  color: #64748b;
+}
+
+body.dark #week-counter {
+  color: #94a3b8;
+}
+
 #grid {
   display: grid;
   grid-template-columns: repeat(14, 1fr);

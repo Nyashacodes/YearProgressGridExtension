@@ -12,12 +12,22 @@ const year = today.getFullYear();
 const totalDays = isLeapYear(year) ? 366 : 365;
 const passedDays = getDayOfYear(today);
 
+//weelk counter
+const weeksPassed = Math.ceil(passedDays / 7);
+const totalWeeks = 52;
+
+document.getElementById("week-counter").textContent =
+  `${weeksPassed} / ${totalWeeks} weeks passed`;
+
+  //day counter
+
 document.getElementById("counter").textContent =
   `${passedDays} / ${totalDays} days passed`;
 
   const darkToggle = document.getElementById("darkToggle");
 const savedTheme = localStorage.getItem("theme");
 
+//modes 
 if (savedTheme === "dark") {
   document.body.classList.add("dark");
   darkToggle.checked = true;
@@ -32,6 +42,15 @@ darkToggle.addEventListener("change", () => {
     localStorage.setItem("theme", "light");
   }
 });
+
+//enable dark mode on click of D key 
+document.addEventListener("keydown", (e) => {
+  if (e.key.toLowerCase() === "d") {
+    darkToggle.checked = !darkToggle.checked;
+    darkToggle.dispatchEvent(new Event("change"));
+  }
+});
+
 
 
 const grid = document.getElementById("grid");
