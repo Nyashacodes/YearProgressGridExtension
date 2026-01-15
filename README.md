@@ -9,7 +9,7 @@ Each square represents **one day of the year**:
 The goal of this extension is to make time **visible at a glance** and help with reflection, planning, and motivation.
 
 📸 **Screenshot**  
-_(Add a screenshot image here to show how the extension looks)_
+_![alt text](image.png)_
 
 ---
 
