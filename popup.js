@@ -39,6 +39,10 @@ monthNames.forEach((name, index) => {
 });
 
 
+const progressFill = document.getElementById("progress-fill");
+progressFill.style.width = `${(passedDays / totalDays) * 100}%`;
+
+
 for (let day = 1; day <= totalDays; day++) {
   const date = new Date(year, 0, day);
   const month = date.getMonth();
