@@ -118,23 +118,76 @@ h3 {
   background: linear-gradient(to right, #22c55e, #3b82f6);
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background: #020617;
-    color: #e5e7eb;
-  }
+/* Dark mode */
+body.dark {
+  background: #020617;
+  color: #e5e7eb;
+}
 
-  #counter {
-    color: #cbd5f5;
-  }
+body.dark #counter {
+  color: #cbd5f5;
+}
 
-  .day:not(.filled) {
-    background: #1e293b;
-  }
+body.dark .day:not(.filled) {
+  background: #1e293b;
+}
 
-  #tooltip {
-    background: #f8fafc;
-    color: #020617;
-  }
+body.dark .day.month-start {
+  background: #334155;
+}
+
+body.dark #tooltip {
+  background: #f8fafc;
+  color: #020617;
+}
+
+body.dark #progress-bar {
+  background: #1e293b;
+}
+
+
+
+/* toggle styling */
+/* Dark mode toggle */
+.switch {
+  float: right;
+  position: relative;
+  width: 32px;
+  height: 16px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background: #cbd5f5;
+  border-radius: 20px;
+  transition: 0.2s;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  left: 2px;
+  bottom: 2px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+input:checked + .slider {
+  background: #0ea5e9;
+}
+
+input:checked + .slider:before {
+  transform: translateX(16px);
 }
 

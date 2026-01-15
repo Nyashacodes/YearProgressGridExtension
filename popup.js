@@ -15,6 +15,25 @@ const passedDays = getDayOfYear(today);
 document.getElementById("counter").textContent =
   `${passedDays} / ${totalDays} days passed`;
 
+  const darkToggle = document.getElementById("darkToggle");
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "dark") {
+  document.body.classList.add("dark");
+  darkToggle.checked = true;
+}
+
+darkToggle.addEventListener("change", () => {
+  if (darkToggle.checked) {
+    document.body.classList.add("dark");
+    localStorage.setItem("theme", "dark");
+  } else {
+    document.body.classList.remove("dark");
+    localStorage.setItem("theme", "light");
+  }
+});
+
+
 const grid = document.getElementById("grid");
 grid.innerHTML = "";
 
