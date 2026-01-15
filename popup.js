@@ -20,6 +20,25 @@ grid.innerHTML = "";
 
 const tooltip = document.getElementById("tooltip");
 
+const legend = document.getElementById("legend");
+const monthNames = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+monthNames.forEach((name, index) => {
+  const item = document.createElement("div");
+  item.className = "legend-item";
+
+  const color = document.createElement("div");
+  color.className = `legend-color month-${index}`;
+
+  const text = document.createElement("span");
+  text.textContent = name;
+
+  item.appendChild(color);
+  item.appendChild(text);
+  legend.appendChild(item);
+});
+
+
 for (let day = 1; day <= totalDays; day++) {
   const date = new Date(year, 0, day);
   const month = date.getMonth();

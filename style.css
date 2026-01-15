@@ -51,6 +51,14 @@ h3 {
 
 }
 
+#grid {
+  display: grid;
+  grid-template-columns: repeat(14, 1fr);
+  gap: 2px;
+  justify-content: center;
+}
+
+
 /* Month color classes */
 .month-0 { background: #24abc3; }  /* Jan */
 .month-1 { background: #3b82f6; }  /* Feb */
@@ -72,5 +80,26 @@ h3 {
 
 /* Month separator (optional) */
 .day.month-start {
-  outline: 1px solid #00000022;
+  outline: 1px solid #00000055;
+  outline-offset: -1px;
+}
+
+#legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  font-size: 10px;
+  gap: 4px;
+}
+
+.legend-color {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
 }
