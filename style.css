@@ -65,6 +65,25 @@ body.dark #week-counter {
 
 }
 
+#weekdays {
+  display: grid;
+  grid-template-columns: repeat(14, 1fr);
+  gap: 2px;
+  font-size: 10px;
+  margin-bottom: 4px;
+  color: #64748b;
+  text-align: center;
+}
+
+.weekday {
+  line-height: 1;
+}
+
+body.dark #weekdays {
+  color: #94a3b8;
+}
+
+
 #grid {
   display: grid;
   grid-template-columns: repeat(14, 1fr);

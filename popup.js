@@ -51,7 +51,19 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
+//show weekname labels
+const weekdays = ["Thu", "Fri", "Sat", "Sun","Mon", "Tue", "Wed"];
+const weekdaysContainer = document.getElementById("weekdays");
 
+for (let i = 0; i < 14; i++) {
+  const label = document.createElement("div");
+  label.className = "weekday";
+  label.textContent = weekdays[i % 7];
+  weekdaysContainer.appendChild(label);
+}
+
+
+//generate grid
 
 const grid = document.getElementById("grid");
 grid.innerHTML = "";
